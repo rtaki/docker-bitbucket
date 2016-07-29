@@ -19,7 +19,7 @@ RUN cp /opt/atlassian/atlassian-bitbucket-4.1.0/conf/server.xml /var/atlassian/a
 #ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 ENV BITBUCKET_HOME /var/atlassian/application-data/bitbucket
 
+COPY entrypoint.sh /sbin/entrypoint.sh
+RUN chmod 755 /sbin/entrypoint.sh
 
-ENTRYPOINT ["/opt/atlassian/atlassian-bitbucket-4.1.0/bin/start-bitbucket.sh", "-fg"]
-
-
+ENTRYPOINT ["/sbin/entrypoint.sh"]
