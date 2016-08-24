@@ -5,8 +5,8 @@ MAINTAINER ynoami<nyata100@gmail.com>
 
 ENV BITB_VERSION 4.1.0
 
-RUN apt-get install curl git -y
-RUN curl -L -O https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-${BITB_VERSION}.tar.gz \
+RUN apt-get install wget git -y
+RUN wget https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-${BITB_VERSION}.tar.gz \
     && mkdir -p /opt/atlassian \
     && tar -zxvf atlassian-bitbucket-${BITB_VERSION}.tar.gz -C /opt/atlassian \
     && rm atlassian-bitbucket-${BITB_VERSION}.tar.gz
